@@ -15,7 +15,7 @@
         {% csrf_token %}
 
         {{ city_input.as_p }}
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Search" />
 
     </form>
 
@@ -37,6 +37,7 @@
                     <th>Weather</th>
                     <th>High (°C)</th>
                     <th>Low (°C)</th>
+                    <th>Average Humidity</th>
                 </tr>
             </thead>
             <tbody>
@@ -45,6 +46,8 @@
                 <td>{{ day.day.condition.text }}</td>
                 <td>{{ day.day.maxtemp_c }}</td>
                 <td>{{ day.day.mintemp_c }}</td>
+                <td>{{day.day.avghumidity}}</td>
+                <td>{{day.astro.moon_phase}}</td>
             </tr>
             {% endfor %}
         </tbody>
